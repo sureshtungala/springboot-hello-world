@@ -31,7 +31,8 @@ steps:
   inputs:
     containerRegistry: 'MyPOCServiceConn'
     repository: 'springboot-hello-world'
-    command: 'push'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
     tags: 'latest'
 
 # - task: KubernetesManifest@1
