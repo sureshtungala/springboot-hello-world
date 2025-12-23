@@ -35,11 +35,11 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: 'latest'
 
-# - task: KubernetesManifest@1
-#   inputs:
-#     action: 'deploy'
-#     connectionType: 'azureResourceManager'
-#     azureSubscriptionConnection: 'Azure subscription 1(d7c64dff-7921-4efe-b592-3d05c7bf2bea)'
-#     azureResourceGroup: 'MyResource'
-#     kubernetesCluster: 'POCCluster'
-#     manifests: 'helloworld'
+- task: KubernetesManifest@1
+  inputs:
+    action: 'deploy'
+    connectionType: 'azureResourceManager'
+    azureSubscriptionConnection: 'Azure subscription 1(d7c64dff-7921-4efe-b592-3d05c7bf2bea)'
+    azureResourceGroup: 'MyResource'
+    kubernetesCluster: 'POCCluster'
+    manifests: '$(System.DefaultWorkingDirectory)/kube-manifests/Deployment-and-Service.yml'
